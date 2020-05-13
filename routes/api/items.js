@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const fs = require("fs");
 
 // Item model
 const Item = require("../../models/Item");
@@ -26,7 +27,14 @@ router.post("/", (req, res) => {
   const newItem = new Item({
     title: req.body.title,
     description: req.body.description,
+    picture: {
+      data: req.body.picture,
+      contentType: "image/png",
+    },
   });
+
+  // newItem.picture.data = fs.readFileSync(req.files.picture.path);
+  // newItem.picture.contentType = "image/png";
 
   newItem.save().then((item) => res.json(item));
 });

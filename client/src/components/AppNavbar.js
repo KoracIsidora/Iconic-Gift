@@ -39,13 +39,13 @@ const AppNavbar = () => {
                 <NavItem>
                   <NavLink
                     href="/login"
-                    style={{ float: "left", fontSize: "1.5rem" }}
+                    style={{ float: "left", fontSize: "1.5rem", color:"white" }}
                   >
                     Login
                   </NavLink>
 
-                  <NavLink href="/register" style={{ float: "right", fontSize: "1.5rem" }}>
-                    Register
+                  <NavLink href="/register" style={{ float: "right", fontSize: "1.5rem", color: "white" }}>
+                    Registracija
                   </NavLink>
                 </NavItem>
               </Nav>

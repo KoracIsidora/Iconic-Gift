@@ -14,8 +14,10 @@ const ItemSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-
-  // Add picture and category
+  picture: {
+    data: Buffer,
+    contentType: String
+  }
 });
 
 module.exports = Item = mongoose.model("item", ItemSchema);
