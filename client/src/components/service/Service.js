@@ -15,4 +15,30 @@ function addItems(title) {
   return res;
 }
 
-export { getItems, addItems };
+function register(name, surname, username, email, password, confirm_password) {
+  let res = fetch("/api/users", {
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    method: "POST",
+    body: JSON.stringify(name, surname, username, email, password, confirm_password),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  return res;
+}
+
+function login(email, password) {
+  let res = fetch("/api/auth", {
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    method: "POST",
+    body: JSON.stringify(email, password),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  return res;
+}
+
+export { getItems, addItems, register, login };

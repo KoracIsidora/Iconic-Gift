@@ -20,10 +20,10 @@ const AppNavbar = () => {
 
   return (
     <Router>
-      <div className="container">
+      <div>
         <Navbar
           dark
-          expand="sm"
+          expand="md"
           className="mb-0"
           style={{ backgroundColor: "#C9B3EC" }}
         >
