@@ -14,6 +14,9 @@ const ItemSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  category: { 
+    type: String
+  },
   picture: {
     data: Buffer,
     contentType: String

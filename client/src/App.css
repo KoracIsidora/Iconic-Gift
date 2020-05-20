@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+* {
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
 body {
-  font-family: 'Pacifico', cursive;
   background-color: white;
   height: 100vh;
 }
@@ -65,7 +69,32 @@ h3 {
   transition: opacity 1000ms ease-in;
 }
 
-
 .col-md-6 {
   padding-left: 0 !important;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: grey;
+  text-align: center;
+}
+
+.gift-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: grey;
+}
+
+.picture:hover {
+  opacity: 0.8;
+  transition: opacity 300ms ease-in;
+}
+
+.gifts {
+  max-width: 960px !important;
+}
+
+.list {
+  height: 100vh;
 }

@@ -64,21 +64,35 @@ const Register = ({ setUser, history }) => {
   }
 
   function checkExisting() {
-    if (!name && !surname && !username && !email && !password && !confirm_password) {
+    if (
+      !name &&
+      !surname &&
+      !username &&
+      !email &&
+      !password &&
+      !confirm_password
+    ) {
       setMessage(msg);
     }
   }
 
   function handleRegister() {
-    register( {name, surname, username, email, password, confirm_password }).then(
-      (data) => {
-        if (data.success === true) {
-          console.log("radi");
-        } else {
-          console.log("Not registered!");
-        }
+    if (!validPass || !isSamePass) return;
+    register({
+      name,
+      surname,
+      username,
+      email,
+      password,
+      confirm_password,
+    }).then((data) => {
+      if (data.success === true) {
+        history.push("/giftlist");
+        setUser(data);
+      } else {
+        console.log("Not registered!");
       }
-    );
+    });
   }
 
   return (
@@ -90,7 +104,7 @@ const Register = ({ setUser, history }) => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-10 col-xl-7 mx-auto">
-                  <h3>Registruj se!</h3>
+                  <h3>Registruj se za više ideja za poklone!</h3>
                   <form>
                     <div className="form-group mb-3">
                       <input

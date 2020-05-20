@@ -13,15 +13,13 @@ const Login = ({ setUser, history }) => {
   function handleLogin() {
     login({ email, password }).then((data) => {
       if (data.success === true) {
-        console.log("radi");
+        history.push("/giftlist");
+        setUser(data);
+        window.localStorage.setItem("x-auth-token", data.token);
       } else {
         console.log("neradi");
       }
     });
-  }
-
-  function check() {
-    console.log("daliradi");
   }
 
   return (
@@ -54,7 +52,7 @@ const Login = ({ setUser, history }) => {
                         type="password"
                         placeholder="Korisnička šifra"
                         required=""
-                        className="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
+                        className="form-control rounded-pill border-0 shadow-sm px-4"
                         onInput={(e) => setPassword(e.target.value)}
                       />
                     </div>
@@ -63,7 +61,6 @@ const Login = ({ setUser, history }) => {
                       className="btn btn-danger btn-block text-uppercase mb-2 rounded-pill shadow-sm"
                       onClick={(e) => {
                         e.preventDefault();
-                        check();
                         handleLogin();
                       }}
                     >

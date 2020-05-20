@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 // @access Private
 
 // Adding items to database
-router.post("/", auth, (req, res) => {
+router.post("/", (req, res) => {
   const newItem = new Item({
     title: req.body.title,
     description: req.body.description,
@@ -31,6 +31,7 @@ router.post("/", auth, (req, res) => {
       data: req.body.picture,
       contentType: "image/png",
     },
+    category: req.body.category,
   });
 
   // newItem.picture.data = fs.readFileSync(req.files.picture.path);

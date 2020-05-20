@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppNavbar from "./components/AppNavbar";
@@ -7,10 +7,12 @@ import Content from "./components/content/Content";
 
 function App() {
 
+  const [user, setUser] = useState();
+
   return (
     <div className="App">
-      <AppNavbar></AppNavbar>
-      <Content></Content>
+      <AppNavbar setUser={setUser} logedIn={user}></AppNavbar>
+      <Content setUser={setUser} user={user} logedIn={user}></Content>
       <Footer></Footer>
     </div>
   );

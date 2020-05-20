@@ -4,13 +4,14 @@ function getItems() {
     .catch((err) => console.log(err));
 }
 
-function addItems(title) {
+
+function addItems(title, description, picture, category) {
   let res = fetch("/api/items", {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
     },
     method: "POST",
-    body: JSON.stringify(title),
+    body: JSON.stringify(title, description, picture, category),
   }).then((res) => res.json());
   return res;
 }
