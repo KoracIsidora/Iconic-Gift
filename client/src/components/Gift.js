@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import uuid from "react-uuid";
-import { getItems, addItems } from "./service/Service";
+import { getItems } from "./service/Service";
 
 const GiftList = () => {
   const [status, setStatus] = useState([]);
   const [work, setWork] = useState("");
+  const [kat, setKat] = useState("");
+  // const [msg, setMsg] = useState("");
+  // let msgg = "Nema podataka za traženu kategoriju.";
 
   useEffect(() => {
     getItems().then((data) => setStatus(data));
@@ -24,6 +27,7 @@ const GiftList = () => {
       let y = document.getElementById("options").options[x].text;
       if (cat.category === y) {
         setWork(cat.title);
+        setKat(cat.description);
       } else {
         console.log("ne");
       }
@@ -79,7 +83,9 @@ const GiftList = () => {
         </div>
       </div>
       <ListGroup>
-        <div>{work}</div>
+        <div className="container mb-5">
+          {work} {kat}
+        </div>
         <TransitionGroup className="giftlist">
           {status
             .map(({ title, description }) => (

@@ -146,6 +146,7 @@ const Register = ({ setUser, history }) => {
                         onInput={(e) => setEmail(e.target.value)}
                       />
                     </div>
+                    
                     <div className="form-group mb-3">
                       <input
                         id="inputPassword"
@@ -158,7 +159,7 @@ const Register = ({ setUser, history }) => {
                     </div>
                     <div className="form-group mb-3">
                       <input
-                        id="inputPassword"
+                        id="inputConfirmPassword"
                         type="password"
                         placeholder="Potvrdi šifru"
                         required=""
@@ -166,7 +167,7 @@ const Register = ({ setUser, history }) => {
                         onInput={(e) => setPass(e.target.value)}
                       />
                     </div>
-                    <p>{message}</p>
+  <p>{message} {mail}</p>
                     <button
                       type="submit"
                       className="btn btn-danger btn-block text-uppercase mb-2 rounded-pill shadow-sm"

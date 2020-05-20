@@ -17,7 +17,7 @@ const Login = ({ setUser, history }) => {
         setUser(data);
         window.localStorage.setItem("x-auth-token", data.token);
       } else {
-        console.log("neradi");
+        setMessage(poruka);
       }
     });
   }
@@ -67,6 +67,7 @@ const Login = ({ setUser, history }) => {
                       Uloguj se
                     </button>
                   </form>
+                  <div>{message}</div>
                   <Link className="container-fluid" to="/register">
                     Niste korisnik? Registrujte se ovde
                   </Link>

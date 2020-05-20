@@ -43,6 +43,16 @@ const AppNavbar = ({ logedIn, setUser }) => {
               <Collapse isOpen={isOpen} navbar style={{ float: "none" }}>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
+                  {/* <NavLink
+                    href="/profile/:user_id"
+                    style={{
+                      float: "right",
+                      fontSize: "1.5rem",
+                      color: "white",
+                    }}
+                  >
+                    Profil
+                  </NavLink> */}
                     <NavLink
                       href="/"
                       style={{

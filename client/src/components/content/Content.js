@@ -5,6 +5,7 @@ import Register from "../Register";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "../Home";
 import GiftList from "../Gift";
+import Profile from "../Profile";
 
 const Content = ({ setUser, user, logedIn }) => {
   if (logedIn) {
@@ -29,6 +30,7 @@ const Content = ({ setUser, user, logedIn }) => {
               path="/register"
               component={(props) => <Register setUser={setUser} {...props} />}
             ></Route>
+            <Route path="/profile/:user_id" component={Profile}></Route>
           </Switch>
         </div>
       </Router>

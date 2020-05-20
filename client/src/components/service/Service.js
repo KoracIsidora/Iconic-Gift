@@ -4,7 +4,6 @@ function getItems() {
     .catch((err) => console.log(err));
 }
 
-
 function addItems(title, description, picture, category) {
   let res = fetch("/api/items", {
     headers: {
@@ -22,7 +21,14 @@ function register(name, surname, username, email, password, confirm_password) {
       "Content-Type": "application/json; charset=utf-8",
     },
     method: "POST",
-    body: JSON.stringify(name, surname, username, email, password, confirm_password),
+    body: JSON.stringify(
+      name,
+      surname,
+      username,
+      email,
+      password,
+      confirm_password
+    ),
   })
     .then((res) => res.json())
     .catch((err) => console.log(err));
@@ -42,4 +48,10 @@ function login(email, password) {
   return res;
 }
 
-export { getItems, addItems, register, login };
+function getProfile(userID) {
+  return fetch("/api/auth")
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+}
+
+export { getItems, addItems, register, login, getProfile };
