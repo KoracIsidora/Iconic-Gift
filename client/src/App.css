@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
 
 * {
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'DM Mono', monospace;
 }
 
 body {
@@ -42,7 +42,7 @@ h3 {
 .login,
 .image {
   min-height: 100vh;
-  background-color: #EAE3EC;
+  background-color: #eae3ec;
 }
 
 .bg-image {

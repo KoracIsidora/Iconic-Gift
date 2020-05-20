@@ -6,6 +6,7 @@ import { getItems, addItems } from "./service/Service";
 
 const GiftList = () => {
   const [status, setStatus] = useState([]);
+  const [work, setWork] = useState("");
 
   useEffect(() => {
     getItems().then((data) => setStatus(data));
@@ -17,14 +18,17 @@ const GiftList = () => {
   //   });
   // }
 
-  useEffect(() => {
-    function handleSearch() {
-      getItems().then((data) => setStatus(data));
-      status.map(({ category }) => {
-        console.log(category);
-      });
-    }
-  });
+  function handleSearch() {
+    status.forEach((cat) => {
+      let x = document.getElementById("options").selectedIndex;
+      let y = document.getElementById("options").options[x].text;
+      if (cat.category === y) {
+        setWork(cat.title);
+      } else {
+        console.log("ne");
+      }
+    });
+  }
 
   return (
     <Container className="list">
@@ -55,8 +59,9 @@ const GiftList = () => {
           <select
             className="btn btn-dark mb-5 container"
             style={{ textAlign: "center" }}
+            id="options"
           >
-            <option>Za njega</option>
+            <option>za njega</option>
             <option>Za nju</option>
             <option>Hrana</option>
             <option>Novogosinji</option>
@@ -65,23 +70,20 @@ const GiftList = () => {
           <Button
             color="dark"
             className="container"
-            // onClick={() => {
-            //   status.map(({ category }) => (
-            //     <CSSTransition key={uuid()} timeout={500} classNames="fade">
-            //       <ListGroupItem>{category}</ListGroupItem>
-            //     </CSSTransition>
-            //   ));
-            // }}
+            onClick={() => {
+              handleSearch();
+            }}
           >
             Pretrazi
           </Button>
         </div>
       </div>
       <ListGroup>
+        <div>{work}</div>
         <TransitionGroup className="giftlist">
           {status
             .map(({ title, description }) => (
-              <CSSTransition key={uuid()} timeout={500} classNames="fade">
+              <CSSTransition key={uuid()}>
                 <ListGroupItem>
                   {title} {description}
                 </ListGroupItem>

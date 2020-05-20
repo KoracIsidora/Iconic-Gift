@@ -37,7 +37,7 @@ const AppNavbar = ({ logedIn, setUser }) => {
                   className="d-inline-block align-center"
                   alt=""
                 />
-                Iconic Gift
+                ICONIC GIFT
               </NavbarBrand>
               <NavbarToggler onClick={handleToggle} />
               <Collapse isOpen={isOpen} navbar style={{ float: "none" }}>
@@ -82,7 +82,7 @@ const AppNavbar = ({ logedIn, setUser }) => {
                 className="d-inline-block align-center"
                 alt=""
               />
-              Iconic Gift
+              ICONIC GIFT
             </NavbarBrand>
             <NavbarToggler onClick={handleToggle} />
             <Collapse isOpen={isOpen} navbar style={{ float: "none" }}>

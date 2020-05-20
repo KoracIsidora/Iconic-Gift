@@ -4,7 +4,6 @@ import Login from "../Login";
 import Register from "../Register";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "../Home";
-import Contact from "../Contact";
 import GiftList from "../Gift";
 
 const Content = ({ setUser, user, logedIn }) => {
